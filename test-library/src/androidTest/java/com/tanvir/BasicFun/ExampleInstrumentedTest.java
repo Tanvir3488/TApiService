@@ -1,4 +1,4 @@
-package com.tanvir.test_library;
+package com.tanvir.BasicFun;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
