@@ -46,18 +46,7 @@ public class BasicFunction {
         this.activity = (Activity) context;
     }
 
-    public void setImage (String uid,final ImageView imageView,int placeHoderIconID){
-
-        String path =uid;
-//final CircleImageView imageView = activity.findViewById(id);
-        Log.e("Image",path);
-        Glide.with(context)
-                .asBitmap()
-                .load(path).placeholder(placeHoderIconID)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
-                .into(imageView);
-    }
+   
 
 
 
@@ -291,8 +280,8 @@ public class BasicFunction {
             byte[] postDataBytes = MyJson.getBytes("UTF-8");
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setReadTimeout(10000);
-            conn.setConnectTimeout(10000);
+            conn.setReadTimeout(1000000);
+            conn.setConnectTimeout(1000000);
             conn.setUseCaches(false);
             conn.setAllowUserInteraction(false);
             conn.setRequestMethod("POST");
