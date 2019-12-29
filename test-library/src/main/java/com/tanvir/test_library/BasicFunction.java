@@ -288,6 +288,14 @@ public class BasicFunction {
             conn.setDoOutput(true);
             conn.getOutputStream().write(postDataBytes);
             Log.e("staus",conn.getResponseCode()+"");
+            if (conn.getResponseCode()!=200){
+                Reader in = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "UTF-8"));
+                StringBuilder sb = new StringBuilder();
+                for (int c; (c = in.read()) >= 0;)
+                    sb.append((char)c);
+                return sb.toString();
+            }
+
             Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
             StringBuilder sb = new StringBuilder();
             for (int c; (c = in.read()) >= 0;)
