@@ -216,6 +216,8 @@ public class BasicFunction {
                 Responce="";
                 // Log.e("Service_Call_Details","Url= "+url+" request_json = " +json+" responce = "+Responce);
                 Responce =  makeServiceCall(url,json,RType);
+                if(BuildConfig.DEBUG)
+
                 Log.e("Service_Call_Details","Url= "+url+" request_json = " +json+" responce = "+Responce);
 
                 // Toast.makeText(context,Responce,Toast.LENGTH_LONG).show();
@@ -241,7 +243,7 @@ public class BasicFunction {
                 @Override
                 public void run() {
 
-
+                    if(BuildConfig.DEBUG)
                         Log.e("resposncformother",Responce+" helo");
                         if (!TextUtils.isEmpty(Responce)) {
                             pDialog.dismiss();
@@ -287,6 +289,7 @@ public class BasicFunction {
             conn.setRequestProperty("Accept", "application/json");
             conn.setDoOutput(true);
             conn.getOutputStream().write(postDataBytes);
+            if(BuildConfig.DEBUG)
             Log.e("staus",conn.getResponseCode()+"");
             if (conn.getResponseCode()!=200){
                 Reader in = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "UTF-8"));
