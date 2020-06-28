@@ -134,12 +134,13 @@ public class BasicFunction {
             if (isInternetOn()) {
                 new AsyncTaskc(request_json, URL, Request_Code).execute();
                 Log.e("ISInternet","true");
-                Toast.makeText(context,"NO Internet Connection",Toast.LENGTH_LONG).show();
+
 
             }
             else {
                 basicFunctionListener.OnConnetivityError();
                 Log.e("ISInternet","false");
+                Toast.makeText(context,"NO Internet Connection",Toast.LENGTH_LONG).show();
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -152,12 +153,13 @@ public class BasicFunction {
         try {
             if (isInternetOn()) {
                 new AsyncTaskc(URL, Request_Code).execute();
-                Toast.makeText(context,"NO Internet Connection",Toast.LENGTH_LONG).show();
+
                 Log.e("ISInternet","true");
             }
             else {
                 basicFunctionListener.OnConnetivityError();
                 Log.e("ISInternet","false");
+                Toast.makeText(context,"NO Internet Connection",Toast.LENGTH_LONG).show();
             }
         } catch (JSONException e) {
             e.printStackTrace();
