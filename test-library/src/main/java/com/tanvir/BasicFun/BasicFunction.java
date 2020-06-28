@@ -231,7 +231,7 @@ public class BasicFunction {
 
 
             } catch (Exception e) {
-                Log.e("Exception",e.getMessage());
+                Log.e("Exception1",e.getMessage());
             }
 
             return null;
@@ -246,7 +246,9 @@ public class BasicFunction {
 
                     try {
                         Log.e("resposncformother",Responce+" helo");
-
+                            if (TextUtils.isEmpty(Responce)){
+                                Responce = "{"+"  NAME: TANVIR" +"}";
+                            }
                             pDialog.dismiss();
                             basicFunctionListener.OnServerResponce(new JSONObject(Responce), Rc);
                             cancel(true);
@@ -255,6 +257,7 @@ public class BasicFunction {
 
                     } catch (JSONException e) {
                         e.printStackTrace();
+                        Log.e("Exception",e.getMessage());
                     }
 
 
