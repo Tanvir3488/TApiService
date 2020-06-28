@@ -15,6 +15,7 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -133,6 +134,7 @@ public class BasicFunction {
             if (isInternetOn()) {
                 new AsyncTaskc(request_json, URL, Request_Code).execute();
                 Log.e("ISInternet","true");
+                Toast.makeText(context,"NO Internet Connection",Toast.LENGTH_LONG).show();
 
             }
             else {
@@ -150,6 +152,7 @@ public class BasicFunction {
         try {
             if (isInternetOn()) {
                 new AsyncTaskc(URL, Request_Code).execute();
+                Toast.makeText(context,"NO Internet Connection",Toast.LENGTH_LONG).show();
                 Log.e("ISInternet","true");
             }
             else {
