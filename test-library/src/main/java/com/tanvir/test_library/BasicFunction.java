@@ -248,6 +248,9 @@ public class BasicFunction {
 
 
                         Log.e("resposncformother",Responce+" Tanvir");
+                        if (TextUtils.isEmpty(Responce)){
+                            Responce="nothing";
+                        }
                             pDialog.dismiss();
                             basicFunctionListener.OnServerResponce(Responce, Rc);
                             cancel(true);
