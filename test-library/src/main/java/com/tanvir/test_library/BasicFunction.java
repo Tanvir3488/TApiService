@@ -169,10 +169,17 @@ public class BasicFunction {
         //  ProgressDialog pDialog;
         String Responce;
         public AsyncTaskc(String json, String URL,int RC,String RType) throws JSONException {
+            JSONObject finaljsonObject =new JSONObject(json);
 
-
-
-            this.json = json;
+            finaljsonObject.put("office_id", getPreference("office_id"));
+            finaljsonObject.put("distributor_id", getPreference("db_id"));
+            finaljsonObject.put("store_id", getPreference("store_id"));
+            finaljsonObject.put("sales_representative_id", getPreference("sr_id"));
+            finaljsonObject.put("sales_representative_code", getPreference("sr_code"));
+            finaljsonObject.put("territory_id", getPreference("territory_id"));
+            finaljsonObject.put("tso_id", getPreference("tso_id"));
+            finaljsonObject.put("ae_id", getPreference("ae_id"));
+            this.json = finaljsonObject.toString();
             this.url = URL;
             this.Rc = RC;
             this.RType = RType;
@@ -184,7 +191,6 @@ public class BasicFunction {
         public AsyncTaskc(String URL,int RC,String RType) throws JSONException {
 
             JSONObject jsonObject =new JSONObject();
-
 
             this.json = jsonObject.toString();
             this.url = URL;
