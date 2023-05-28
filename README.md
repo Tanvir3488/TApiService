@@ -1,3 +1,4 @@
+....
 allprojects {
 repositories {
 ... maven { url 'https://jitpack.io' }
@@ -8,6 +9,7 @@ repositories {
 dependencies {
 implementation 'com.github.Tanvir3488:TApiService:7'
 }
+....
 
 public class MainActivity implements BasicFunctionListener {
 
